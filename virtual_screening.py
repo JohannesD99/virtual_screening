@@ -139,7 +139,8 @@ def score(log_name, score_dict):
     return score_dict
 
 def exe_run(resume, vina):
-    """takes the path to the configuration file as an input. If config file is in screeningfolder, just the name is sufficient."""
+    """takes the path to the vina.exe file and a logical variable as an input. 
+    If resume == 'True' the backup.txt file will be used to continue the screening run"""
     
     if resume == True:
 
@@ -254,9 +255,9 @@ if os.path.exists("backup.txt") != True:
 ###############################
 
 # download and preparation           
-# download(ZINC)
-# unzip()
-# pdbqt_split()
+download(ZINC)
+unzip()
+pdbqt_split()
 
 # run the virtual screening
 # set "resume" True if you want to continue from a breakpoint ("backup.txt" file is expected in screening_folder)
